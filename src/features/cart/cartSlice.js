@@ -31,11 +31,23 @@ const cartSlice = createSlice({
         },
 
         updateQuantity: (state, action) => {
-            const updatedItems = state.cartItems.map((item) => {
-                item.id === action.payload.id
-                    ? action.payload.quantity > 0 ? { ...item, quantity: action.payload.quantity } : null
-                    : item
+
+            // console.log(action.payload);
+
+            const updates = action.payload;
+
+            let updatedItems;
+
+            updates.forEach((update) => {
+                updatedItems = state.cartItems.map((item) => (
+                    item.id === update.id ? update.quantity > 0 ? { ...item, quantity: update.quantity } : null : item
+                ));
             });
+            // const updatedItems = state.cartItems.map((item) => {
+            //     item.id === action.payload[0]
+            //         ? action.payload[1] > 0 ? { ...item, quantity: action.payload[1] } : null
+            //         : item
+            // });
 
             state.cartItems = updatedItems.filter(item => item !== null);
         },

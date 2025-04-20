@@ -48,7 +48,7 @@ const CartPage = () => {
                                         <div className="flex items-center gap-2 mt-2">
                                             <button
                                                 className="bg-[#334155] w-8 h-8 rounded flex items-center justify-center"
-                                                onClick={() => dispatch(updateQuantity(item.id, item.quantity - 1))}
+                                                onClick={() => dispatch(updateQuantity([{ id: item.id, quantity: item.quantity - 1 }]))}
                                                 aria-label={`Decrease quantity of ${item.name}`}
                                             >
                                                 -
@@ -56,7 +56,7 @@ const CartPage = () => {
                                             <span>{item.quantity}</span>
                                             <button
                                                 className="bg-[#334155] w-8 h-8 rounded flex items-center justify-center"
-                                                onClick={() => dispatch(updateQuantity(item.id, item.quantity + 1))}
+                                                onClick={() => dispatch(updateQuantity([{ id: item.id, quantity: item.quantity + 1 }]))}
                                                 aria-label={`Increase quantity of ${item.name}`}
                                             >
                                                 +
