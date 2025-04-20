@@ -8,7 +8,7 @@ const HomePage = ({ products }) => {
     return (
         <div className="homepage">
             <HeroBanner />
-            <FeaturedProducts products={products} />
+            <FeaturedProducts />
         </div>
     )
 }

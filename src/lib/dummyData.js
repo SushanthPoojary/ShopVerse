@@ -1,9 +1,9 @@
-import deskLamp from "../assets/deskLamp.jpg";
-import ergonomicChair from "../assets/ergonomicChair.jpg";
-import keyboard from "../assets/keyboard.jpg";
-import watch from "../assets/watch.jpg";
-import speaker from "../assets/speaker.jpg";
-import laptopStand from "../assets/laptopStand.jpg";
+// import deskLamp from "../assets/deskLamp.jpg";
+// import ergonomicChair from "../assets/ergonomicChair.jpg";
+// import keyboard from "../assets/keyboard.jpg";
+// import watch from "../assets/watch.jpg";
+// import speaker from "../assets/speaker.jpg";
+// import laptopStand from "../assets/laptopStand.jpg";
 
 export const productLists = [
     {
@@ -11,7 +11,7 @@ export const productLists = [
       name: "Modern Desk Lamp",
       price: 599,
       rating: 4.8,
-      image: deskLamp,
+      image: "/images/deskLamp.jpg",
       description: "Sleek and adjustable desk lamp with LED technology",
       category: "Office",
     },
@@ -20,7 +20,7 @@ export const productLists = [
       name: "Ergonomic Chair",
       price: 2000,
       rating: 4.9,
-      image: ergonomicChair,
+      image: "/images/ergonomicChair.jpg",
       description: "Premium office chair with lumbar support",
       category: "Furniture",
     },
@@ -29,7 +29,7 @@ export const productLists = [
       name: "Wireless Keyboard",
       price: 1499,
       rating: 4.7,
-      image: keyboard,
+      image: "/images/keyboard.jpg",
       description: "Compact wireless keyboard with backlight",
       category: "Electronics",
     },
@@ -38,7 +38,7 @@ export const productLists = [
       name: "Smart Watch",
       price: 4999,
       rating: 4.6,
-      image: watch,
+      image: "/images/watch.jpg",
       description: "Feature-rich smartwatch with health tracking",
       category: "Wearables",
     },
@@ -47,7 +47,7 @@ export const productLists = [
       name: "Bluetooth Speaker",
       price: 3999,
       rating: 4.5,
-      image: speaker,
+      image: "/images/speaker.jpg",
       description: "Portable speaker with premium sound",
       category: "Audio",
     },
@@ -56,7 +56,7 @@ export const productLists = [
       name: "Laptop Stand",
       price: 399,
       rating: 4.4,
-      image: laptopStand,
+      image: "/images/laptopStand.jpg",
       description: "Adjustable aluminum laptop stand",
       category: "Accessories",
     },
