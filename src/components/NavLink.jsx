@@ -1,19 +1,22 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router";
 
-const NavLink = ({ href, label }) => {
+const NaviLink = ({ href, label }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <a
-      href={href}
-      className="font-medium transition-colors duration-200"
-      style={{ color: isHovered ? "#FBBF24" : "#F8FAFC" }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+    <NavLink
+      to={href}
+      style={({ isActive }) => {
+        return {
+          color: isActive ? "#FBBF24" : "",
+        };
+      }}
+      className="hover:text-[#FBBF24] transition-colors duration-200"
     >
       {label}
-    </a>
+    </NavLink>
   );
 };
 
-export default NavLink;
+export default NaviLink;

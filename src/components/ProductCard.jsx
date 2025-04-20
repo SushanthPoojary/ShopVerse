@@ -1,9 +1,23 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../features/cart/cartSlice";
 
-const ProductCard = ({ product, addToCart }) => {
+const ProductCard = ({ product }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const { name, price, rating, image, description } = product;
+
+    const dispatch = useDispatch();
+
+    // console.log(addToCart);
+    // console.log(product);
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        // console.log(e);
+        // addToCart(product);
+        dispatch(addToCart(product));
+    }
 
     return (
         <article
@@ -30,10 +44,10 @@ const ProductCard = ({ product, addToCart }) => {
                 </div>
                 <p className="text-[#E2E8F0] text-[14px] mb-[16px]">{description}</p>
                 <div className="flex justify-between items-center">
-                    <span className="text-[24px] font-bold text-[#FBBF24]">${price}</span>
+                    <span className="text-[24px] font-bold text-[#FBBF24]">₹{price}</span>
                     <button
-                        onClick={() => addToCart(product)}
-                        className="px-[16px] py-[8px] bg-[#334155] hover:bg-[#475569] rounded-[8px] text-[14px] font-medium transition-colors duration-200"
+                        onClick={handleClick}
+                        className="px-[16px] py-[8px] bg-[#334155] hover:bg-[#475569] rounded-[8px] text-[14px] font-medium transition-colors duration-200 cursor-pointer"
                     >
                         Add to Cart
                     </button>

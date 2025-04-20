@@ -1,6 +1,6 @@
 import ProductCard from "./ProductCard";
 
-const FeaturedProducts = ({ products, addToCart }) => {
+const FeaturedProducts = ({ products }) => {
   return (
     <section className="max-w-[1440px] mx-auto px-[24px] py-[64px]">
       <h3 className="text-[32px] font-bold mb-[32px]">Featured Products</h3>
@@ -9,7 +9,6 @@ const FeaturedProducts = ({ products, addToCart }) => {
           <ProductCard
             key={product.id}
             product={product}
-            addToCart={addToCart}
           />
         ))}
       </div>
