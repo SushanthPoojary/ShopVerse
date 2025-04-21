@@ -6,8 +6,14 @@ const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const toggleMobileMenu = () => {
-        setMobileMenuOpen(!mobileMenuOpen);
+        setMobileMenuOpen((prev) => !prev);
     };
+
+    const navLinks = [
+        { href: "/", label: "Home" },
+        { href: "/products", label: "Shop" },
+        { href: "/contact", label: "Contact" },
+    ];
 
     return (
         <header className="fixed w-full bg-[#1E293B] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] z-50">
@@ -17,7 +23,12 @@ const Header = () => {
                         <h1 className="text-[24px] font-bold text-[#F8FAFC]">ShopVerse</h1>
                         <nav className="max-lg:hidden">
                             <ul className="flex gap-[32px]">
-                                <li>
+                                {navLinks.map((link) => (
+                                    <li key={link.href}>
+                                        <NaviLink href={link.href} label={link.label} />
+                                    </li>
+                                ))}
+                                {/* <li>
                                     <NaviLink href="/" label="Home" />
                                 </li>
                                 <li>
@@ -25,7 +36,7 @@ const Header = () => {
                                 </li>
                                 <li>
                                     <NaviLink href="/contact" label="Contact" />
-                                </li>
+                                </li> */}
                             </ul>
                         </nav>
                     </div>
@@ -66,7 +77,12 @@ const Header = () => {
                     <div className="lg:hidden mt-4 py-4 border-t border-[#334155]">
                         <nav>
                             <ul className="flex flex-col gap-4">
-                                <li>
+                                {navLinks.map((link) => (
+                                    <li key={link.href} onClick={() => toggleMobileMenu()}>
+                                        <NaviLink href={link.href} label={link.label} />
+                                    </li>
+                                ))}
+                                {/* <li>
                                     <NaviLink href="/" label="Home" />
                                 </li>
                                 <li>
@@ -74,7 +90,7 @@ const Header = () => {
                                 </li>
                                 <li>
                                     <NaviLink href="/contact" label="Contact" />
-                                </li>
+                                </li> */}
                             </ul>
                         </nav>
                         <div className="mt-4">
