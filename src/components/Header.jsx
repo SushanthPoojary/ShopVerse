@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CartButton from "./CartButton.jsx";
 import NaviLink from "./NavLink.jsx";
+import { Link } from "react-router";
 
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,7 +21,9 @@ const Header = () => {
             <div className="max-w-[1440px] mx-auto px-[24px] py-[16px]">
                 <div className="flex items-center justify-between">
                     <div className="flex items-center gap-[48px]">
-                        <h1 className="text-[24px] font-bold text-[#F8FAFC]">ShopVerse</h1>
+                        <Link to="/">
+                            <h1 className="text-[24px] font-bold text-[#F8FAFC]">ShopVerse</h1>
+                        </Link>
                         <nav className="max-lg:hidden">
                             <ul className="flex gap-[32px]">
                                 {navLinks.map((link) => (
